@@ -9,7 +9,7 @@
 
 ```bash
 # From GitHub Releases
-pip install https://github.com/janvoldan/asa-cli/releases/download/v1.0/asa-1.0.0-py3-none-any.whl
+pip install https://github.com/janvoldan/asa-cli/releases/download/v2.0/asa-2.0.0-py3-none-any.whl
 
 # From PyPI (coming soon)
 # pip install asa
@@ -58,7 +58,7 @@ asa repair              # Fix remaining drift
 | Command | Description |
 |---|---|
 | `asa init --name <name>` | Initialize new ASA project with `.asa/spec.yaml` |
-| `asa install <module>` | Install foundation module (db-basic, auth-basic, payments-basic) |
+| `asa install <module>` | Install foundation module (auth-basic, payments-basic, admin-basic) |
 | `asa lint [--strict]` | Boundary + structure + security + entitlement enforcement |
 
 ### Slice Management
@@ -84,9 +84,10 @@ asa repair              # Fix remaining drift
 
 | Module | What it creates |
 |---|---|
-| `db-basic` | Supabase client, types, utils, seed, migrations framework |
-| `auth-basic` | Middleware, session, hooks, types + profiles migration |
-| `payments-basic` | Stripe client, plans, webhooks + entitlement guards (requireEntitlement, requireLimit) |
+| `auth-basic` | Register, login, logout, reset-password + middleware, session, guards, hooks + profiles migration. Auto-installs `db-basic`. |
+| `payments-basic` | Subscribe, cancel, webhook (inbox pattern), check-limits + Stripe client, plans, entitlements, reconciliation |
+| `admin-basic` | Dashboard, users, roles, impersonation, audit-log + RBAC permission guards, immutable audit trail |
+| `db-basic` | *(internal auto-dependency)* Supabase client, types, utils, seed, migrations framework |
 
 ## ASA Native Stack
 
@@ -110,4 +111,4 @@ asa repair              # Fix remaining drift
 
 ---
 
-*v1.0.0 — 2026-03-10*
+*v2.0.0 — 2026-03-11*
