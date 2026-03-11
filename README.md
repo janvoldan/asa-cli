@@ -12,7 +12,7 @@
 pip install asa-standard
 
 # Step 2: Install engine (required for scan, lint, slice, deploy commands)
-pip install https://github.com/janvoldan/asa-cli/releases/download/v2.0.0/asa-engine-2.0.0-py3-none-any.whl
+pip install https://github.com/janvoldan/asa-cli/releases/download/v2.1.0/asa-engine-2.1.0-py3-none-any.whl
 ```
 
 > **Note:** `pip install asa-standard` installs the CLI wrapper. The `asa` command works immediately
@@ -114,4 +114,4 @@ asa repair              # Fix remaining drift
 
 ---
 
-*v2.0.0 — 2026-03-11*
+*v2.1.0 — 2026-03-11*
