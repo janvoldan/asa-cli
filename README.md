@@ -8,12 +8,15 @@
 ## Install
 
 ```bash
-# From GitHub Releases
-pip install https://github.com/janvoldan/asa-cli/releases/download/v2.0/asa-2.0.0-py3-none-any.whl
+# Step 1: Install CLI wrapper from PyPI
+pip install asa-standard
 
-# From PyPI (coming soon)
-# pip install asa
+# Step 2: Install engine (required for scan, lint, slice, deploy commands)
+pip install https://github.com/janvoldan/asa-cli/releases/download/v2.0.0/asa-engine-2.0.0-py3-none-any.whl
 ```
+
+> **Note:** `pip install asa-standard` installs the CLI wrapper. The `asa` command works immediately
+> for `asa init`, `asa --help`, `asa --version`. Engine commands (scan, lint, etc.) require Step 2.
 
 ## Quick Start
 
